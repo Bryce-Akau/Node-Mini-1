@@ -10,17 +10,17 @@ module.exports = {
        const {title, author} = req.body;
        console.log(req.body)
        let book = {
-           id: id,
+           id: meme.length + 1,
            title: title,
            author: author
        }
        books.push(book)
-       id++
+    //    id++
        res.status(200).send(books) 
     },
     update: ( req, res ) => {
         let index = null;
-        books.forEach((book, i) => {
+        books.forEach((book/*element*/, i/*index*/ ) => {
           if(book.id === Number(req.params.id)) index = i;
         })
         books[ index ] = {
